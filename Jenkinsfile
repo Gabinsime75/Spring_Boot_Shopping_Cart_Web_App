@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
       maven 'maven3'
-      java 'jdk17'
+      jdk 'jdk17'
     }
    environment {
      SCANNER_HOME= tool 'sonar-scanner'
@@ -42,27 +42,27 @@ pipeline {
                 }
             }
         }
-        stage('Hello') {
+        stage('Hello1') {
             steps {
                 echo 'Hello World'
             }
         }
-        stage('Hello') {
+        stage('Hello2') {
             steps {
                 echo 'Hello World'
             }
         }
-        stage('Hello') {
+        stage('Hello3') {
             steps {
                 echo 'Hello World'
             }
         }
-        stage('Hello') {
+        stage('Hello4') {
             steps {
                 echo 'Hello World'
             }
         }
-        stage('Hello') {
+        stage('Hello5') {
             steps {
                 echo 'Hello World'
             }
