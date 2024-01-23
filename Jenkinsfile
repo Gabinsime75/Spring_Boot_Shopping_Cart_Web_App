@@ -32,12 +32,11 @@ pipeline {
        stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
-                    sh '''$SCANNER_HOME/bin/sonar-scanner \
+                    sh """$SCANNER_HOME/bin/sonar-scanner \
                     -Dsonar.projectKey=Spring_Boot_SC_Web_App \
                     -Dsonar.projectName=Spring_Boot_SC_Web_App
-                    -Dsonar.host.url=http://3.89.81.183:9000 \
                     -Dsonar.javabinaries=. \
-                    -Dsonar.login=squ_151eb88a464ef662daf58fbf6df0b185dbf5381a'''
+                    """
                     }
                 }
             }
