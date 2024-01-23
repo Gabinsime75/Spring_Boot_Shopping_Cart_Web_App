@@ -36,7 +36,7 @@ pipeline {
                     -Dsonar.projectKey=Spring_Boot_SC_Web_App \
                     -Dsonar.projectName=Spring_Boot_SC_Web_App
                     -Dsonar.java.binaries=. \
-                    -X
+                    -x
                     """
                     }
                 }
