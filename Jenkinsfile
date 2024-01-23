@@ -35,7 +35,7 @@ pipeline {
                     sh """$SCANNER_HOME/bin/sonar-scanner \
                     -Dsonar.projectKey=Spring_Boot_SC_Web_App \
                     -Dsonar.projectName=Spring_Boot_SC_Web_App
-                    -Dsonar.javabinaries=. \
+                    -Dsonar.java.binaries=. \
                     """
                     }
                 }
