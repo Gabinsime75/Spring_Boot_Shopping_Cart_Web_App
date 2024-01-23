@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
       maven 'maven3'
-      jdk 'jdk11'
+      jdk 'jdk17'
     }
    environment {
      SCANNER_HOME= tool 'sonar-scanner'
@@ -32,39 +32,11 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
-                    sh """ 
-                    ${SCANNER_HOME}/bin/sonar-scanner \
+                    sh """ ${SCANNER_HOME}/bin/sonar-scanner \
                     -Dsonar.projectKey=Spring_Boot_SC_Web_App \
-                    -Dsonar.java.binaries=. \
-                    -Dsonar.host.url=http://44.203.226.117:9000 \
-                    -Dsonar.login=squ_f41f23d4e15c339fcfd02c3176611ffc600b8aa6
-                    """
+                    -Dsonar.projectName=Spring_Boot_SC_Web_App
+                    -Dsonar.java.binaries=. """
                 }
-            }
-        }
-        stage('Hello1') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage('Hello2') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage('Hello3') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage('Hello4') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage('Hello5') {
-            steps {
-                echo 'Hello World'
             }
         }
     }
