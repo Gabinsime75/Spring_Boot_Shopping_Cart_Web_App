@@ -32,11 +32,9 @@ pipeline {
        stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
-                    sh """mvn clean verify sonar:sonar \
+                    sh """$SCANNER_HOME/bin/sonar-scanner \
                     -Dsonar.projectKey=Spring_Boot_SC_Web_App \
                     -Dsonar.projectName=Spring_Boot_SC_Web_App
-                    -Dsonar.host.url=http://3.89.81.183:9000 \
-                    -Dsonar.login=sqp_47cfcff009ed91cc8a2077a93337ac9fa1c973c7 \
                     -Dsonar.javabinaries=. \
                     """
                     }
