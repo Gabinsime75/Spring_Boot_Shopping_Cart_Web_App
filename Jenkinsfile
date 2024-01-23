@@ -35,6 +35,7 @@ pipeline {
                     sh """ ${SCANNER_HOME}/bin/sonar-scanner \
                     -Dsonar.projectKey=Spring_Boot_SC_Web_App \
                     -Dsonar.projectName=Spring_Boot_SC_Web_App
+                    -Dsonar.login=squ_151eb88a464ef662daf58fbf6df0b185dbf5381a \
                     -Dsonar.java.binaries=. """
                 }
             }
